@@ -7,7 +7,8 @@
 app.controller("formularioController", function ($scope, $parse, $http, $uibModal) {
 
 
-    $scope.condicoes;
+    $scope.respostas = {};
+    
     $http({
         method: 'GET',
         url: 'api/servicoSX/getCondicoes',
