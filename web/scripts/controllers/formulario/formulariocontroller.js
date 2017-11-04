@@ -7,7 +7,7 @@
 app.controller("formularioController", function ($scope, $parse, $http, $uibModal) {
 
 
-    $scope.respostas = {};
+    $scope.respostas = [];
     
     $http({
         method: 'GET',
@@ -18,6 +18,21 @@ app.controller("formularioController", function ($scope, $parse, $http, $uibModa
         console.log(response);
     }
     );
+
+ $scope.exists = function (item) {
+        return $scope.respostas.indexOf(item) > -1;
+      };
+      
+      
+      $scope.toggle = function (item) {
+        var idx = $scope.respostas.indexOf(item);
+        if (idx > -1) {
+          $scope.respostas.splice(idx, 1);
+        }
+        else {
+          $scope.respostas.push(item);
+        }
+      };
 
    $scope.comercarFormulario = function(email,nome)
    {

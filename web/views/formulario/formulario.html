@@ -12,52 +12,53 @@ Autores:Leandro;Jonathan;Yuri
 
 
 
-    <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 1" ng-true-value="'A'" class="md-warn md-align-top-left">
+    <md-checkbox  aria-label="Checkbox 1" ng-checked="exists('A')" ng-click="toggle('A')" class="md-warn md-align-top-left">
         <span class="ipsum">
             Sinto minha vida como uma busca incessante daquilo que julgo perfeito.
         </span>
     </md-checkbox>
-  <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 2" ng-true-value="'B'" class="md-primary" >
+  <md-checkbox  aria-label="Checkbox 2" ng-checked="exists('B')" ng-click="toggle('B')" class="md-primary" >
         <span class="ipsum">
             Sou do tipo de pessoa que adora ser reconhecido e bajulado!
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 3" ng-true-value="'C'" class="md-primary" >
+     <md-checkbox aria-label="Checkbox 3" nng-checked="exists('C')" ng-click="toggle('C')" class="md-primary" >
         <span class="ipsum">
             Tenho compulsão pelo trabalho!
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 4" ng-true-value="'D'" class="md-primary" >
+     <md-checkbox  aria-label="Checkbox 4" ng-checked="exists('C')" ng-click="toggle('C')" class="md-primary" >
         <span class="ipsum">
             STenho a sensação permanente de falta... Simplesmente algo ainda não aconteceu na minha vida!
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 5" ng-true-value="'E'" class="md-primary" >
+     <md-checkbox aria-label="Checkbox 5" ng-checked="exists('E')" ng-click="toggle('E')" class="md-primary" >
         <span class="ipsum">
             Gosto de estar sozinho, pensando, meditando no meu canto em silêncio.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 6" ng-true-value="'F'" class="md-primary" >
+     <md-checkbox  aria-label="Checkbox 6" ng-checked="exists('F')" ng-click="toggle('F')" class="md-primary" >
         <span class="ipsum">
             Sou muito inseguro, tenho medo de qualquer situação nova ou daquelas que eu acho perigosas, pois podem não dar certo e me machucar.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 7" ng-true-value="'G'" class="md-primary" >
+     <md-checkbox aria-label="Checkbox 7" ng-checked="exists('G')" ng-click="toggle('G')" class="md-primary" >
         <span class="ipsum">
             Sempre acho um significado positivo em tudo. Sou um idealista e otimista inveterado!
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 8" ng-true-value="'H'" class="md-primary" >
+     <md-checkbox  aria-label="Checkbox 8" ng-checked="exists('H')" ng-click="toggle('H')" class="md-primary" >
         <span class="ipsum">
            Tenho dificuldades em aceitar opiniões contrárias às minhas.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 9" ng-true-value="'I'" class="md-primary" >
+     <md-checkbox aria-label="Checkbox 9" ng-checked="exists('I')" ng-click="toggle('I')" class="md-primary" >
         <span class="ipsum">
            Às vezes, protelo o que tenho para fazer de mais importante, inventando um monte de desculpas.
         </span>
     </md-checkbox>
 
+     <code style="display: block; padding: 8px;">{{respostas | json}}</code>
 
 </div>
 
