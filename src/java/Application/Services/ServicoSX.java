@@ -10,11 +10,17 @@ import Domain.Commom.enumCondicao;
 import Domain.Commom.enumTipoProblema;
 import Domain.DTO.RetornoJsonDTO;
 import Domain.DTO.TipoProblemaDTO;
-import Domain.Entities.Problema;
-import Domain.Entities.Simplex;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
+import javax.mail.Address;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -47,38 +53,64 @@ public class ServicoSX {
     }
 
     @POST
-    @Path("/calcularValores")
+    @Path("/enviarResultado")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_FORM_URLENCODED})
     @Produces(MediaType.APPLICATION_JSON)
-    public RetornoJsonDTO calcularValores(String lista, String problema) {
-        try {
+    public void enviarResultado(String lista) {
+     try{
+         String nome,email;
             Util u = new Util();
             List<List<String>> listal = new ArrayList<List<String>>();
             JSONObject request = new JSONObject(lista);
-            JSONArray arr = request.getJSONArray("vetor");
+            JSONArray arr = request.getJSONArray("lista");
+            nome = request.get("nome").toString();
+            email = request.get("email").toString();
+            
             Gson gson = new Gson();
-            TipoProblemaDTO tp = gson.fromJson(request.get("problema").toString(), TipoProblemaDTO.class);
+       
             for (int i = 0; i < arr.length(); i++) {
                 listal.add(u.JsonArrayStringToList(arr.getJSONArray(i)));
             }
-            Simplex s = new Simplex();
+             
+        Properties props = new Properties();
+            /** Parâmetros de conexão com servidor Gmail */
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.socketFactory.port", "465");
+            props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.port", "465");
 
-            Problema p = new Problema(listal, tp.getId());
-            s.executarSimplex(p);
-            List result = s.imprimeResultado();
+            Session session = Session.getDefaultInstance(props,
+                        new javax.mail.Authenticator() {
+                             protected PasswordAuthentication getPasswordAuthentication() 
+                             {
+                                   return new PasswordAuthentication("pucminasformulario@gmail.com", "123pucminas");
+                             }
+                        });
+            /** Ativa Debug para sessão */
+            session.setDebug(true);
 
-            RetornoJsonDTO retornojson = new RetornoJsonDTO();
-            retornojson.setError(false);
-            retornojson.setData(result);
 
-            return retornojson;
+                  Message message = new MimeMessage(session);
+                  message.setFrom(new InternetAddress("seuemail@gmail.com")); //Remetente
+
+                  Address[] toUser = InternetAddress //Destinatário(s)
+                             .parse(email);  
+                  message.setRecipients(Message.RecipientType.TO, toUser);
+                  message.setSubject("Resposta Formulario respondido por "+nome);//Assunto
+                  message.setText("Enviei este email utilizando JavaMail com minha conta GMail!");
+                  /**Método para enviar a mensagem criada*/
+                  Transport.send(message);
+            
+            
         } catch (Exception e) {
             RetornoJsonDTO retornojson = new RetornoJsonDTO();
             retornojson.setError(true);
             retornojson.setErrorMessage(e.getMessage());
-            return retornojson;
+
         }
     }
+}
 
     //@GET
     //@Path("/getListaUsuariosEventos")
@@ -89,4 +121,4 @@ public class ServicoSX {
     //List<UsuarioDTO> listDTO = usuarios.stream().map(i -> new UsuarioDTO(i.getNome())).collect(Collectors.toList());
     //return listDTO;
     // }
-}
+
