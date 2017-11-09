@@ -4,15 +4,14 @@ Trabalho Simplex
 Autores:Leandro;Jonathan;Yuri 
 -->
 
-<div id="top"></div>
-<div id="mid"  >
 
 
+<div ng-init="questaoAtual = 2"></div>
     <h4>2) Concordo que...</h4>
 
 
 
-    <md-checkbox  aria-label="Checkbox 1" ng-checked="exists('A')" ng-click="toggle('A')" class="md-warn md-align-top-left">
+    <md-checkbox  aria-label="Checkbox 1" ng-checked="exists('A')" ng-click="toggle('A')" class="md-primary">
         <span class="ipsum">
             Primeiro a obrigação, depois a diversão!
         </span>
@@ -59,8 +58,17 @@ Autores:Leandro;Jonathan;Yuri
     </md-checkbox>
 
      <code style="display: block; padding: 8px;">{{respostas | json}}</code>
+     
 
-</div>
-
-<div id="bot"></div>
-
+ <nav aria-label="..." class="navbar-fixed-bottom text-center" >
+            <ul class="pagination">
+               
+                <li class=""><a href="#!/questao1">1</a></li>
+                <li class="active"><a href="#!/questao2">2</a></li>
+                <li class=""><a href="#!/questao3">3</a></li>
+                <li class=""><a href="#!/questao4">4</a></li>
+                <li class=""><a href="#!/questao5">5</a></li>
+                <li class=""><a href="#!/questao6">6</a></li>
+                <li class=""><a href="#!/questao7">7</a></li>
+            </ul>
+        </nav>

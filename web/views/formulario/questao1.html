@@ -1,11 +1,8 @@
-<div id="top"></div>
-  <div id="mid"  >
+
 
      <h4>1) Em qual situação você se enquadra?</h4>
- 
- 
- 
-     <md-checkbox  aria-label="Checkbox 1" ng-checked="exists('A')" ng-click="toggle('A')" class="md-warn md-align-top-left">
+
+     <md-checkbox  aria-label="Checkbox 1" ng-checked="exists('A')" ng-click="toggle('A')" class="md-primary">
           <span class="ipsum">
               Sinto minha vida como uma busca incessante daquilo que julgo perfeito.
           </span>
@@ -17,15 +14,15 @@
           </span>
       </md-checkbox>
  
-      <md-checkbox aria-label="Checkbox 3" nng-checked="exists('C')" ng-click="toggle('C')" class="md-primary" >
+      <md-checkbox aria-label="Checkbox 3" ng-checked="exists('C')" ng-click="toggle('C')" class="md-primary" >
           <span class="ipsum">
               Tenho compulsão pelo trabalho!
           </span>
       </md-checkbox>
  
-      <md-checkbox  aria-label="Checkbox 4" ng-checked="exists('C')" ng-click="toggle('C')" class="md-primary" >
+      <md-checkbox  aria-label="Checkbox 4" ng-checked="exists('D')" ng-click="toggle('D')" class="md-primary" >
           <span class="ipsum">
-              STenho a sensação permanente de falta... Simplesmente algo ainda não aconteceu na minha vida!
+              Tenho a sensação permanente de falta... Simplesmente algo ainda não aconteceu na minha vida!
           </span>
       </md-checkbox>
  
@@ -60,6 +57,16 @@
       </md-checkbox>
   
       <code style="display: block; padding: 8px;">{{respostas | json}}</code>
-  
-  </div>
-<div id="bot"></div>
+       <nav aria-label="..." class="navbar-fixed-bottom text-center" >
+            <ul class="pagination">
+                
+                
+                <li class="active"><a href="#!/questao1">1</a></li>
+                <li class=""><a href="#!/questao2">2</a></li>
+                <li class=""><a href="#!/questao3">3</a></li>
+                <li class=""><a href="#!/questao4">4</a></li>
+                <li class=""><a href="#!/questao5">5</a></li>
+                <li class=""><a href="#!/questao6">6</a></li>
+                <li class=""><a href="#!/questao7">7</a></li>
+            </ul>
+        </nav>

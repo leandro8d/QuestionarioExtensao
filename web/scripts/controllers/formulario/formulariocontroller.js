@@ -4,41 +4,35 @@
  */
 
 
-app.controller("formularioController", function ($scope, $parse, $http, $uibModal) {
+app.controller("formularioController", function ($scope,$cookies,$location,formularioService,$route) {
 
 
     $scope.respostas = [];
-    
-    $http({
-        method: 'GET',
-        url: 'api/servicoSX/getCondicoes',
-    }).then(function successCallback(response) {
-        $scope.condicoes = response.data;
-    }, function errorCallback(response) {
-        console.log(response);
+
+    function sessao() {
+       var email = $cookies.get('email');
+       var nome = $cookies.get('nome');
+       if(!email||!nome)
+           $location.path('');
     }
-    );
+    
 
- $scope.exists = function (item) {
-        return $scope.respostas.indexOf(item) > -1;
-      };
-      
-      
-      $scope.toggle = function (item) {
-        var idx = $scope.respostas.indexOf(item);
+    sessao();
+    $scope.exists = function (item) {
+        return formularioService.respostas[$route.current.$$route.idQuestion-1].indexOf(item) > -1;
+    };
+    $scope.teste = 'teste';
+    $scope.paginaAtual = formularioService.paginaAtual;
+
+    $scope.toggle = function (item) {
+        var idx = formularioService.respostas[$route.current.$$route.idQuestion-1].indexOf(item);
         if (idx > -1) {
-          $scope.respostas.splice(idx, 1);
+            formularioService.respostas[$route.current.$$route.idQuestion-1].splice(idx, 1);
+        } else {
+            formularioService.respostas[$route.current.$$route.idQuestion-1].push(item);
         }
-        else {
-          $scope.respostas.push(item);
-        }
-      };
+    };
 
-   $scope.comercarFormulario = function(email,nome)
-   {
-       $cookies.put('email', email);
-       $cookies.put('nome', nome);
-       $state.go("/formulario");
-   }
+
 
 });

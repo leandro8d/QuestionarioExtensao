@@ -3,7 +3,7 @@
  Github: leandro8d
  linkedin/email: leandro8d@hotmail.com
  */
-app.controller("homeController", function ($scope, $parse, $http, $uibModal) {
+app.controller("homeController", function ($scope, $cookies, $http, $location) {
 
 
     $scope.condicoes;
@@ -17,11 +17,12 @@ app.controller("homeController", function ($scope, $parse, $http, $uibModal) {
     }
     );
 
-   $scope.comercarFormulario = function(email,nome)
-   {
-       $cookies.put('email', email);
-       $cookies.put('nome', nome);
-       $state.go("/formulario");
-   }
+ 
+    $scope.comercarFormulario = function (email, nome)
+    {
+        $cookies.put('email', email);
+        $cookies.put('nome', nome);
+        $location.path("/questao1");
+    };
 
 });

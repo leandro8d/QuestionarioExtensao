@@ -4,62 +4,71 @@ Trabalho Simplex
 Autores:Leandro;Jonathan;Yuri 
 -->
 
-<div id="top"></div>
-<div id="mid"  >
+
 
 
     <h4>5) Percebo que...</h4>
 
 
 
-    <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 1" ng-true-value="'A'" class="md-warn md-align-top-left">
+    <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 1" ng-checked="exists('A')" ng-click="toggle('A')" class="md-primary">
         <span class="ipsum">
             Se não pode ser bem feito, melhor não fazer!
         </span>
     </md-checkbox>
-  <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 2" ng-true-value="'B'" class="md-primary" >
+  <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 2" ng-checked="exists('B')" ng-click="toggle('B')" class="md-primary" >
         <span class="ipsum">
             Fico zangado quando as pessoas das quais espero reconhecimento me ignoram ou me fazem sentir em segundo lugar!
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 3" ng-true-value="'C'" class="md-primary" >
+     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 3" ng-checked="exists('C')" ng-click="toggle('C')" class="md-primary" >
         <span class="ipsum">
             Quando fracasso, recupero-me rapidamente.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 4" ng-true-value="'D'" class="md-primary" >
+     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 4" ng-checked="exists('D')" ng-click="toggle('D')" class="md-primary" >
         <span class="ipsum">
             Ninguém compreende meus sentimentos.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 5" ng-true-value="'E'" class="md-primary" >
+     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 5" ng-checked="exists('E')" ng-click="toggle('E')" class="md-primary" >
         <span class="ipsum">
            Meu quarto é o único local da casa no qual posso ficar mais livre, sem ter que falar com ninguém.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 6" ng-true-value="'F'" class="md-primary" >
+     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 6" ng-checked="exists('F')" ng-click="toggle('F')" class="md-primary" >
         <span class="ipsum">
             Não aceito ser controlado ou obrigado a fazer algo.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 7" ng-true-value="'G'" class="md-primary" >
+     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 7" ng-checked="exists('G')" ng-click="toggle('G')" class="md-primary" >
         <span class="ipsum">
             Tento manter sempre o alto astral!
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 8" ng-true-value="'H'" class="md-primary" >
+     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 8" ng-checked="exists('H')" ng-click="toggle('H')" class="md-primary" >
         <span class="ipsum">
            Preciso controlar tudo, mesmo percebendo quanto isso me faz mal no sentido de gastar muita energia.
         </span>
     </md-checkbox>
-     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 9" ng-true-value="'I'" class="md-primary" >
+     <md-checkbox ng-model="respostas.resposta1" aria-label="Checkbox 9" ng-checked="exists('I')" ng-click="toggle('I')" class="md-primary" >
         <span class="ipsum">
            É fácil me adaptar a qualquer tipo de pessoa.
         </span>
     </md-checkbox>
 
 
-</div>
 
-<div id="bot"></div>
-
+      <nav aria-label="..." class="navbar-fixed-bottom text-center" >
+            <ul class="pagination">
+                
+                
+                <li class=""><a href="#!/questao1">1</a></li>
+                <li class=""><a href="#!/questao2">2</a></li>
+                <li class=""><a href="#!/questao3">3</a></li>
+                <li class=""><a href="#!/questao4">4</a></li>
+                <li class="active"><a href="#!/questao5">5</a></li>
+                <li class=""><a href="#!/questao6">6</a></li>
+                <li class=""><a href="#!/questao7">7</a></li>
+            </ul>
+        </nav>
