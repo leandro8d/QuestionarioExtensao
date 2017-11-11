@@ -8,6 +8,7 @@ package Application.Services;
 import Domain.Commom.Util;
 import Domain.Commom.enumCondicao;
 import Domain.Commom.enumTipoProblema;
+import Domain.DTO.QuestaoDTO;
 import Domain.DTO.RetornoJsonDTO;
 import Domain.DTO.TipoProblemaDTO;
 import com.google.gson.Gson;
@@ -57,23 +58,32 @@ public class ServicoSX {
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_FORM_URLENCODED})
     @Produces(MediaType.APPLICATION_JSON)
     public void enviarResultado(String lista) {
-     try{
-         String nome,email;
+        try {
+            String nome, email;
             Util u = new Util();
-            List<List<String>> listal = new ArrayList<List<String>>();
+            List<QuestaoDTO> listaValores = new ArrayList<QuestaoDTO>();
+            List<String> listaResultado = new ArrayList<String>();
+            List<String> perfis = new ArrayList<String>();
+
             JSONObject request = new JSONObject(lista);
-            JSONArray arr = request.getJSONArray("lista");
+            JSONArray arrValores = request.getJSONArray("lista");
+            JSONArray arrResultado = request.getJSONArray("listaRepetidos");
             nome = request.get("nome").toString();
             email = request.get("email").toString();
-            
+
             Gson gson = new Gson();
-       
-            for (int i = 0; i < arr.length(); i++) {
-                listal.add(u.JsonArrayStringToList(arr.getJSONArray(i)));
+
+            for (int i = 0; i < arrValores.length(); i++) {
+                listaValores.add(gson.fromJson(arrValores.getJSONObject(i).toString(), QuestaoDTO.class));
             }
-             
-        Properties props = new Properties();
-            /** Parâmetros de conexão com servidor Gmail */
+            for (int i = 0; i < arrResultado.length(); i++) {
+                listaResultado.add(arrResultado.getString(i));
+            }
+
+            Properties props = new Properties();
+            /**
+             * Parâmetros de conexão com servidor Gmail
+             */
             props.put("mail.smtp.host", "smtp.gmail.com");
             props.put("mail.smtp.socketFactory.port", "465");
             props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -81,28 +91,71 @@ public class ServicoSX {
             props.put("mail.smtp.port", "465");
 
             Session session = Session.getDefaultInstance(props,
-                        new javax.mail.Authenticator() {
-                             protected PasswordAuthentication getPasswordAuthentication() 
-                             {
-                                   return new PasswordAuthentication("pucminasformulario@gmail.com", "123pucminas");
-                             }
-                        });
-            /** Ativa Debug para sessão */
+                    new javax.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication("pucminasformulario@gmail.com", "123pucminas");
+                }
+            });
+            /**
+             * Ativa Debug para sessão
+             */
             session.setDebug(true);
 
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("pucminasformulario@gmail.com")); //Remetente
 
-                  Message message = new MimeMessage(session);
-                  message.setFrom(new InternetAddress("seuemail@gmail.com")); //Remetente
+            Address[] toUser = InternetAddress //Destinatário(s)
+                    .parse(email);
+            message.setRecipients(Message.RecipientType.TO, toUser);
+            message.setSubject("Resposta Formulario respondido por '" + nome+"', E-mail: '"+email+"'");//Assunto
 
-                  Address[] toUser = InternetAddress //Destinatário(s)
-                             .parse(email);  
-                  message.setRecipients(Message.RecipientType.TO, toUser);
-                  message.setSubject("Resposta Formulario respondido por "+nome);//Assunto
-                  message.setText("Enviei este email utilizando JavaMail com minha conta GMail!");
-                  /**Método para enviar a mensagem criada*/
-                  Transport.send(message);
+            String msg;
+            msg = "Letras e quantidades Selecionadas: ";
+            for (QuestaoDTO q : listaValores) {
+                msg += q.getLetra() + "  " + q.getTotal() + " ,";
+            }
+            msg += "; Letras com maior incidência: ";
+            for (String p : listaResultado) {
+                if(p.equals("A")){
+                  msg += p+"_Mediador" + (listaResultado.size() > 1 ? " ," : ";");
+                }
+              else if(p.equals("B")){
+                  msg += p+"_Cauteloso" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+              else if(p.equals("C")){
+                  msg += p+"_Desempenhador" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+              else if(p.equals("D")){
+                  msg += p+"_Perfeccionista" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+              else if(p.equals(p=="E")){
+                  msg += p+"_Sensibilidade" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+              else if(p.equals("F")){
+                  msg += p+"_Prestativo" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+              else if(p.equals("G")){
+                  msg += p+"_Confrontador" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+              else if(p.equals("H")){
+                  msg += p+"_Observador" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+              else if(p.equals("I")){
+                  msg += p+"_Otimista" + (listaResultado.size() > 1 ? " ," : ";");
+              }
+                
+                
+                
+            }
             
             
+
+            message.setText(msg);
+            /**
+             * Método para enviar a mensagem criada
+             */
+            Transport.send(message);
+
         } catch (Exception e) {
             RetornoJsonDTO retornojson = new RetornoJsonDTO();
             retornojson.setError(true);
@@ -112,13 +165,13 @@ public class ServicoSX {
     }
 }
 
-    //@GET
-    //@Path("/getListaUsuariosEventos")
-    //@Produces(MediaType.APPLICATION_JSON)
-    //public List<UsuarioDTO> getListaUsuariosEventos() {
-    //  IUsuarioRepository repository = new UsuarioRepository();
-    // List<Usuario> usuarios = repository.getUsuariosVinculadosEventoList();
-    //List<UsuarioDTO> listDTO = usuarios.stream().map(i -> new UsuarioDTO(i.getNome())).collect(Collectors.toList());
-    //return listDTO;
-    // }
+//@GET
+//@Path("/getListaUsuariosEventos")
+//@Produces(MediaType.APPLICATION_JSON)
+//public List<UsuarioDTO> getListaUsuariosEventos() {
+//  IUsuarioRepository repository = new UsuarioRepository();
+// List<Usuario> usuarios = repository.getUsuariosVinculadosEventoList();
+//List<UsuarioDTO> listDTO = usuarios.stream().map(i -> new UsuarioDTO(i.getNome())).collect(Collectors.toList());
+//return listDTO;
+// }
 

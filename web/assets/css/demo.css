@@ -1,3 +1,4 @@
+
 .login-page {
     width: 360px;
     padding: 8% 0 0;
@@ -6,7 +7,7 @@
 .form {
     position: relative;
     z-index: 1;
-    background: #FFFFFF;
+    background: linear-gradient(to bottom right, #43d878, #8392ff);
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
@@ -86,12 +87,12 @@
 .container .info span .fa {
     color: #EF3B3A;
 }
-body {
+html,body {
     background: #76b852; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-    background: -moz-linear-gradient(right, #76b852, #8DC26F);
-    background: -o-linear-gradient(right, #76b852, #8DC26F);
-    background: linear-gradient(to left, #76b852, #8DC26F);
+    background: -webkit-linear-gradient(right, #76b852, #8DC26F) !important;
+    background: -moz-linear-gradient(right, #76b852, #8DC26F)!important;
+    background: -o-linear-gradient(right, #76b852, #8DC26F) !important;
+    background: linear-gradient(to left, #76b852, #8DC26F) !important;
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
@@ -110,9 +111,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-body {
-    color: #fff
-}
+
 
 #top, #mid, #bot {
     position: absolute;
@@ -126,14 +125,20 @@ body {
     top: 0;
 }
 #mid {
-
     top: 20px;
-    bottom: 61px;
     border:1px solid #f4f4f4;
+    box-shadow: 2px 0px 12px 0px #000000;
+    background-color:white;
     padding: 20px;
     margin:10px 25px;
-     box-shadow: 2px 0px 12px 0px #888888;
+
 }
 #bot {
     height: 20px;
+}
+.invalidp{color:red}
+.validp{color:blue}
+
+.white-card{
+
 }

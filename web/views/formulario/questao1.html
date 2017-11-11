@@ -1,614 +1,568 @@
-<<<<<<< HEAD
-<h2>Questionário Pessoal</h2>
+
+ <div id="top"></div>
+        <div  id="mid" >
+
+
+<div class="col-lg-12">
+    <div class="text-center text-capitalize">
+<h1>Questionário Pessoal</h1>
+
 <p>Este teste poderá ajudá-lo no seu auto conhecimento, mas seu resultado não garantirá total certeza para suas escolhas.</p>
-Em cada item, marque a alternativa que mais se identifica com seu jeito de ser.
+<p>Em cada item, marque a alternativa que mais se identifica com seu jeito de ser.</p>
 <p>É obrigatório a marcação das alternativas. Interprete com atenção as afirmações.</p>
 <br>
+</div>
+    <form name="form">
+<md-divider></md-divider>
+<h4 ng-class="{'validp':form.quest1.$valid,'invalidp':!form.quest1.$valid}" ng-class="{'validp':form.quest1.$valid,'invalidp':!form.quest1.$valid}">Questão 1</h4>
 
-<h4>Questão 1</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="1E" ng-click="toggle('1E')">
-        <span class="ipsum">
+<md-radio-group ng-required="true" ng-model="questao1" name="quest1"  class="md-primary" >
+    <md-radio-button aria-label="RadioButton 1" value="1E" >
+        
             Sou romântico (a) e tenho muita imaginação.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="1B" ng-click="toggle('1B')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="1B" >
+        
             Sou pragmático, seguro, tenho os pés no chão.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 2</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="2G" ng-click="toggle('2G')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest2.$valid,'invalidp':!form.quest2.$valid}">Questão 2</h4>
+<md-radio-group ng-required="true" ng-model="questao2" name="quest2" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="2G" >
+        
             Tenho tendência a entrar em conflitos, quando não concordo com algo.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="2A" ng-click="toggle('2A')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="2A" >
+        
             Tenho tendência a evitar conflitos.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 3</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="3C" ng-click="toggle('3C')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest3.$valid,'invalidp':!form.quest3.$valid}">Questão 3</h4>
+<md-radio-group ng-required="true" ng-model="questao3"  name="quest3" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="3C" >
+        
             Costumo ser diplomático, gentil e ambicioso.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="3D" ng-click="toggle('3D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" ng-required="true" value="3D" >
+        
             Costumo ser direto, formal e idealista.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 4</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="4H" ng-click="toggle('4H')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest4.$valid,'invalidp':!form.quest4.$valid}">Questão 4</h4>
+<md-radio-group ng-required="true" ng-model="questao4" name="quest4"  class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="4H" >
+        
             Em geral sou objetivo e denso.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="4I" ng-click="toggle('4I')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="4I" >
+        
             Em geral sou espontâneo e ligado ao prazer.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 5</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="5F" ng-click="toggle('5F')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest5.$valid,'invalidp':!form.quest5.$valid}">Questão 5</h4>
+<md-radio-group ng-required="true" ng-model="questao5" name="quest5" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="5F" >
+        
             Na maioria das vezes sou hospitaleiro e aberto a novas amizades.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="5E" ng-click="toggle('5E')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="5E" >
+        
             Na maioria das vezes gosto de manter minha privacidade e sou difícil de me misturar com os outros.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 6</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="6B" ng-click="toggle('6B')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest6.$valid,'invalidp':!form.quest6.$valid}">Questão 6</h4>
+<md-radio-group ng-required="true" ng-model="questao6" name="quest6" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="6B" >
+        
             Em geral é fácil me tirar do sério.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="6A" ng-click="toggle('6A')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="6A" >
+        
             Em geral é difícil de me tirar do sério.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 7</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="7G" ng-click="toggle('7G')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest7.$valid,'invalidp':!form.quest7.$valid}">Questão 7</h4>
+<md-radio-group ng-required="true" ng-model="questao7" name="quest7" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="7G" >
+        
             O meu lado prático é mais forte do que meu lado idealista.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="7D" ng-click="toggle('7D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="7D" >
+        
             O meu lado idealista é mais forte do que meu lado prático.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 8</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="8F" ng-click="toggle('8F')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest8.$valid,'invalidp':!form.quest8.$valid}">Questão 8</h4>
+<md-radio-group ng-required="true" ng-model="questao8" name="quest8" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="8F" >
+        
             Sinto necessidade de mostrar afeto pelas pessoas.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="8H" ng-click="toggle('8H')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="8H" >
+        
             Prefiro manter uma certa distância das pessoas, sem demonstrar afeto.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 9</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="9C" ng-click="toggle('9C')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest9.$valid,'invalidp':!form.quest9.$valid}">Questão 9</h4>
+<md-radio-group ng-required="true" ng-model="questao9" name="quest9" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="9C" >
+        
             Diante de uma experiência nova, eu frequentemente me pergunto se será útil para mim.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="9I" ng-click="toggle('9I')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="9I" >
+        
             Diante de uma experiência nova, eu frequentemente me pergunto se será bom para mim.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 10</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="10E" ng-click="toggle('10E')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest10.$valid,'invalidp':!form.quest10.$valid}">Questão 10</h4>
+<md-radio-group ng-required="true" ng-model="questao10" name="quest10" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="10E" >
+        
             Sou propenso a pensar demais em mim mesmo.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="10A" ng-click="toggle('10A')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="10A" >
+        
             Sou propenso a pensar demais nos outros.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 11</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="11H" ng-click="toggle('11H')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest11.$valid,'invalidp':!form.quest11.$valid}">Questão 11</h4>
+<md-radio-group ng-required="true" ng-model="questao11" name="quest11" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="11H" >
+        
             As pessoas costumam se apoiar nas minhas novas ideias e no meu conhecimento.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="11G" ng-click="toggle('11G')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="11G" >
+        
             As pessoas costumam a se apoiar na minha força e na minha capacidade de decisão.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 12</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="12B" ng-click="toggle('12B')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest12.$valid,'invalidp':!form.quest12.$valid}">Questão 12</h4>
+<md-radio-group ng-required="true" ng-model="questao12" name="quest12" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="12B" >
+        
             Ao longo do tempo tenho sido inseguro demais.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="12D" ng-click="toggle('12D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="12D" >
+        
             Ao longo do tempo tenho sido seguro demais.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 13</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="13F" ng-click="toggle('13F')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest13.$valid,'invalidp':!form.quest13.$valid}">Questão 13</h4>
+<md-radio-group ng-required="true" ng-model="questao13" name="quest13" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="13F" >
+        
             Sou mais voltado para relacionamentos do que objetivos.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="13C" ng-click="toggle('13C')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="13C" >
+        
             Sou mais voltado para objetivos do que relacionamentos.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 14</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="14E" ng-click="toggle('14E')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest14.$valid,'invalidp':!form.quest14.$valid}">Questão 14</h4>
+<md-radio-group ng-required="true" ng-model="questao14" name="quest14" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="14E" >
+        
             Não sou capaz de defender meus interesses muito bem, cedo mais fácil.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="14I" ng-click="toggle('14I')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="14I" >
+        
             Constantemente digo coisas que os outros gostariam de dizer.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
 
-<h4>Questão 15</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="15H" ng-click="toggle('15H')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest15.$valid,'invalidp':!form.quest15.$valid}">Questão 15</h4>
+<md-radio-group ng-required="true" ng-model="questao15" name="quest15" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="15H" >
+        
             Tem sido muito difícil parar de analisar opções e fazer alguma coisa definitiva.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="15D" ng-click="toggle('15D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="15D" >
+        
             Tem sido muito difícil “pegar leve” e ser mais flexível.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
 
-<h4>Questão 16</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="16D" ng-click="toggle('16D')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest16.$valid,'invalidp':!form.quest16.$valid}">Questão 16</h4>
+<md-radio-group ng-required="true" ng-model="questao16" name="quest16" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="16D" >
+        
             Tenho tendência a hesitar e adiar.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="16G" ng-click="toggle('16G')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="16G" >
+        
             Tenho tendência a ser corajoso e dominador.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 17</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="17A" ng-click="toggle('17A')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest17.$valid,'invalidp':!form.quest17.$valid}">Questão 17</h4>
+<md-radio-group ng-required="true" ng-model="questao17" name="quest17" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="17A" >
+        
             Tenho medo de me envolver – e isso atrapalha meus relacionamentos.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="17F" ng-click="toggle('17F')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="17F" n>
+        
             Faço força que as pessoas dependam de mim – e isso me cria problemas.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 18</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="18C" ng-click="toggle('18C')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest18.$valid,'invalidp':!form.quest18.$valid}">Questão 18</h4>
+<md-radio-group ng-required="true" ng-model="questao18" name="quest18" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="18C" >
+        
             Na maioria das vezes eu consigo por sentimentos de lado e realizar meu trabalho.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="18E" ng-click="toggle('18E')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="18E" >
+        
             Na maioria das vezes tenho que lidar comigo e resolver meus problemas e sentimentos a fazer alguma coisa.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 19</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="19D" ng-click="toggle('19D')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest19.$valid,'invalidp':!form.quest19.$valid}">Questão 19</h4>
+<md-radio-group ng-required="true" ng-model="questao19" name="quest19" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="19D" >
+        
             Em geral sou metódico e cauteloso, tenho cuidado.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="19I" ng-click="toggle('19I')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="19I" >
+        
             Em geral sou aventureiro e assumo riscos.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 20</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="20F" ng-click="toggle('20F')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest20.$valid,'invalidp':!form.quest20.$valid}">Questão 20</h4>
+<md-radio-group ng-required="true" ng-model="questao20" name="quest20" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1"  value="20F" >
+        
             Sou uma pessoa solidária e generosa, que gosta de companhia.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="20D" ng-click="toggle('20D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="20D" >
+        
             Sou uma pessoa séria e reservada, inclinada a entrar em discussões.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 21</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="21G" ng-click="toggle('21G')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest21.$valid,'invalidp':!form.quest21.$valid}">Questão 21</h4>
+<md-radio-group ng-required="true" ng-model="questao21" name="quest21" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="21G" >
+        
             Com frequência sinto necessidade de ser um exemplo de fortaleza.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="21C" ng-click="toggle('21C')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="21C" >
+        
             Com frequência sinto necessidade de agir com perfeição.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 22</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="22H" ng-click="toggle('22H')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest22.$valid,'invalidp':!form.quest22.$valid}">Questão 22</h4>
+<md-radio-group ng-required="true" ng-model="questao22" name="quest22" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="22H" >
+        
             Gosto de fazer perguntas difíceis e de manter minha independência.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="22A" ng-click="toggle('22A')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="22A" >
+        
             Gosto de manter minha estabilidade e paz de espírito.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 23</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="23B" ng-click="toggle('23B')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest23.$valid,'invalidp':!form.quest23.$valid}">Questão 23</h4>
+<md-radio-group ng-required="true" ng-model="questao23" name="quest23" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="23B" >
+        
             Costumo ser duro e realista demais.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="23F" ng-click="toggle('23F')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="23F" >
+        
             Tenho coração mole e costumo ser sentimental demais.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 24</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="24I" ng-click="toggle('24I')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.ques24.$valid,'invalidp':!form.quest24.$valid}">Questão 24</h4>
+<md-radio-group ng-required="true" ng-model="questao24" name="quest24" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="24I" >
+        
             Quase sempre me preocupo com a possibilidade de estar perdendo coisas melhores.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="24G" ng-click="toggle('24G')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="24G" >
+        
             Acho que se “baixar a guarda” alguém pode me explorar.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 25</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="25E" ng-click="toggle('25E')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest25.$valid,'invalidp':!form.quest25.$valid}">Questão 25</h4>
+<md-radio-group ng-required="true" ng-model="questao25" name="quest25" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="25E" >
+        
             Meu comportamento arredio costuma chatear as pessoas.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="25D" ng-click="toggle('25D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="25D" >
+        
             Minha mania de dizer o que as pessoas devem fazer costuma chateá-las.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 26</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="26A" ng-click="toggle('26A')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest26.$valid,'invalidp':!form.quest26.$valid}">Questão 26</h4>
+<md-radio-group ng-required="true" ng-model="questao26" name="quest26" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="26A" >
+        
             Geralmente, quando estou com problemas, costumo esquecê-los, mas sofro.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="26I" ng-click="toggle('26I')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="26I" >
+        
             Geralmente, quando estou com problemas, faço alguma coisa que me dê prazer.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 27</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="27B" ng-click="toggle('27B')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest27.$valid,'invalidp':!form.quest7.$valid}">Questão 27</h4>
+<md-radio-group ng-required="true" ng-model="questao27" name="quest27" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="27B" >
+        
             Eu conto com o apoio dos meus amigos e eles sabem que podem contar com o meu.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="27C" ng-click="toggle('27C')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="27C" >
+        
             Não dependo das pessoas, conto comigo mesmo para fazer as coisas.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 28</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="28H" ng-click="toggle('28H')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest28.$valid,'invalidp':!form.quest28.$valid}">Questão 28</h4>
+<md-radio-group ng-required="true" ng-model="questao28" name="quest28" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="28H" >
+        
             Sou desprendido e me preocupo com os outros.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="28E" ng-click="toggle('28E')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="28E" >
+        
             Sou de lua, e auto centrado.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 29</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="29G" ng-click="toggle('29G')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest29.$valid,'invalidp':!form.quest29.$valid}">Questão 29</h4>
+<md-radio-group ng-required="true" ng-model="questao29" name="quest29" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="29G" >
+        
             Gosto de chacoalhar e desafiar as pessoas.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="29F" ng-click="toggle('29F')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="29F" >
+        
             Gosto de confortar e acalmar as pessoas.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 30</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="30I" ng-click="toggle('30I')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest30.$valid,'invalidp':!form.quest30.$valid}">Questão 30</h4>
+<md-radio-group ng-required="true" ng-model="questao30" name="quest30" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="30I" n>
+        
             Sou sociável e gosto de sair de casa.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="30D" ng-click="toggle('30D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="30D" >
+        
             Sou sincero e disciplinado.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 31</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="31A" ng-click="toggle('31A')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest31.$valid,'invalidp':!form.quest31.$valid}">Questão 31</h4>
+<md-radio-group ng-required="true" ng-model="questao31" name="quest31" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="31A" >
+        
             Em geral, tenho vergonha de exibir meus talentos.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="31C" ng-click="toggle('31C')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="31C" n>
+        
             Em geral não escondo os meus talentos.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 32</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="32H" ng-click="toggle('32H')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest32.$valid,'invalidp':!form.quest32.$valid}">Questão 32</h4>
+<md-radio-group ng-required="true" ng-model="questao32" name="quest32" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="32H" >
+        
             Ir atrás de meus interesses pessoais tem sido mais importante para mim do que conforto e segurança.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="32B" ng-click="toggle('32B')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="32B" >
+        
             O conforto e segurança tem sido mais importante para mim do que meus interesses pessoais.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 33</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="33E" ng-click="toggle('33E')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest33.$valid,'invalidp':!form.quest33.$valid}">Questão 33</h4>
+<md-radio-group ng-required="true" ng-model="questao33" name="quest33" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="33E" >
+        
             Quando me envolvo em conflito, a certa altura costumo me retirar.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="33G" ng-click="toggle('33G')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="33G" >
+        
             Quando me envolvo em conflito raramente fujo da raia.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 34</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="34A" ng-click="toggle('34A')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest34.$valid,'invalidp':!form.quest34.$valid}">Questão 34</h4>
+<md-radio-group ng-required="true" ng-model="questao34" name="quest34" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="34A" >
+        
             Costumo ceder facilmente e me deixo levar pelos outros.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="34D" ng-click="toggle('34D')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="34D" >
+        
             Costumo ser descompromissado e exigente demais com os outros.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 35</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="35I" ng-click="toggle('35I')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest35.$valid,'invalidp':!form.quest35.$valid}">Questão 35</h4>
+<md-radio-group ng-required="true" ng-model="questao35" name="quest35" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="35I" >
+        
             Costumo ser admirado pela minha força interior e pelo meu senso de humor.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="35F" ng-click="toggle('35F')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="35F" >
+        
             Costumo ser admirado por uma serenidade e generosidade acima da media.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
+<md-divider></md-divider>
 
-<h4>Questão 36</h4>
-<md-radio-group class="md-primary">
-    <md-radio-button aria-label="RadioButton 1" value="36C" ng-click="toggle('36C')">
-        <span class="ipsum">
+<h4 ng-class="{'validp':form.quest36.$valid,'invalidp':!form.quest36.$valid}">Questão 36</h4>
+<md-radio-group ng-required="true" ng-model="questao36" name="quest36" class="md-primary">
+    <md-radio-button aria-label="RadioButton 1" value="36C" >
+        
             Grande parte do meu sucesso se deve a capacidade de causar boa impressão.
-        </span>
+       
     </md-radio-button>
-    <md-radio-button aria-label="RadioButton 2" value="36H" ng-click="toggle('36H')">
-        <span class="ipsum">
+    <md-radio-button aria-label="RadioButton 2" value="36H" >
+        
             Sou bem sucedido apesar de não ter quase nenhum interesse em cultivar a arte de me relacionar.
-        </span>
+       
     </md-radio-button>
 </md-radio-group>
-
-<code style="display: block; padding: 8px;">{{respostas | json}}</code>
-<!--
-<nav aria-label="..." class="navbar-fixed-bottom text-center">
-    <ul class="pagination">
-        <li class="active">
-            <a href="#!/questao1">1</a>
-        </li>
-        <li class="">
-            <a href="#!/questao2">2</a>
-        </li>
-        <li class="">
-            <a href="#!/questao3">3</a>
-        </li>
-        <li class="">
-            <a href="#!/questao4">4</a>
-        </li>
-        <li class="">
-            <a href="#!/questao5">5</a>
-        </li>
-        <li class="">
-            <a href="#!/questao6">6</a>
-        </li>
-        <li class="">
-            <a href="#!/questao7">7</a>
-        </li>
-    </ul>
-</nav>
--->
-<button type="button" ng-click="enviar()">Enviar</button>
-=======
+    </form>
 
 
-     <h4>1) Em qual situação você se enquadra?</h4>
+<div class="row text-center" id="bottom">
+<div ng-if="!form.$valid" class="alert alert-danger">
+  <strong>Verifique as Questoes!</strong> Para finalizar, selecione uma alternativa em todas as questoes disponíveis.
+</div>
+    
+<button ng-disabled="!form.$valid" class="btn btn-lg btn-default" ng-click="finalizar()">Finalizar</button>
+</div>
+</div>
+            </div>
+        <div class="bot">
 
-     <md-checkbox  aria-label="Checkbox 1" ng-checked="exists('A')" ng-click="toggle('A')" class="md-primary">
-          <span class="ipsum">
-              Sinto minha vida como uma busca incessante daquilo que julgo perfeito.
-          </span>
-      </md-checkbox>
- 
-   <md-checkbox  aria-label="Checkbox 2" ng-checked="exists('B')" ng-click="toggle('B')" class="md-primary" >
-          <span class="ipsum">
-              Sou do tipo de pessoa que adora ser reconhecido e bajulado!
-          </span>
-      </md-checkbox>
- 
-      <md-checkbox aria-label="Checkbox 3" ng-checked="exists('C')" ng-click="toggle('C')" class="md-primary" >
-          <span class="ipsum">
-              Tenho compulsão pelo trabalho!
-          </span>
-      </md-checkbox>
- 
-      <md-checkbox  aria-label="Checkbox 4" ng-checked="exists('D')" ng-click="toggle('D')" class="md-primary" >
-          <span class="ipsum">
-              Tenho a sensação permanente de falta... Simplesmente algo ainda não aconteceu na minha vida!
-          </span>
-      </md-checkbox>
- 
-      <md-checkbox aria-label="Checkbox 5" ng-checked="exists('E')" ng-click="toggle('E')" class="md-primary" >
-          <span class="ipsum">
-              Gosto de estar sozinho, pensando, meditando no meu canto em silêncio.
-          </span>
-      </md-checkbox>
- 
-      <md-checkbox  aria-label="Checkbox 6" ng-checked="exists('F')" ng-click="toggle('F')" class="md-primary" >
-          <span class="ipsum">
-              Sou muito inseguro, tenho medo de qualquer situação nova ou daquelas que eu acho perigosas, pois podem não dar certo e me machucar.
-          </span>
-      </md-checkbox>
- 
-      <md-checkbox aria-label="Checkbox 7" ng-checked="exists('G')" ng-click="toggle('G')" class="md-primary" >
-          <span class="ipsum">
-              Sempre acho um significado positivo em tudo. Sou um idealista e otimista inveterado!
-          </span>
-      </md-checkbox>
- 
-      <md-checkbox  aria-label="Checkbox 8" ng-checked="exists('H')" ng-click="toggle('H')" class="md-primary" >
-          <span class="ipsum">
-             Tenho dificuldades em aceitar opiniões contrárias às minhas.
-          </span>
-      </md-checkbox>
-
-      <md-checkbox aria-label="Checkbox 9" ng-checked="exists('I')" ng-click="toggle('I')" class="md-primary" >
-          <span class="ipsum">
-             Às vezes, protelo o que tenho para fazer de mais importante, inventando um monte de desculpas.
-          </span>
-      </md-checkbox>
-  
-      <code style="display: block; padding: 8px;">{{respostas | json}}</code>
-       <nav aria-label="..." class="navbar-fixed-bottom text-center" >
-            <ul class="pagination">
-                
-                
-                <li class="active"><a href="#!/questao1">1</a></li>
-                <li class=""><a href="#!/questao2">2</a></li>
-                <li class=""><a href="#!/questao3">3</a></li>
-                <li class=""><a href="#!/questao4">4</a></li>
-                <li class=""><a href="#!/questao5">5</a></li>
-                <li class=""><a href="#!/questao6">6</a></li>
-                <li class=""><a href="#!/questao7">7</a></li>
-            </ul>
-        </nav>
->>>>>>> 12aa50b4b298b8ad4f65327b47bbe9ed48f97fcc
+        </div>
