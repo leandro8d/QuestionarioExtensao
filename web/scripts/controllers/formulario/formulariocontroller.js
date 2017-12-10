@@ -80,7 +80,7 @@ app.controller("formularioController", function ($scope, $cookies, $location, fo
 
         for (j = 0; j < 9; j++)
         {
-            if ($scope.vetorValores[j].total > segundoMaiorValor && $scope.vetorValores[j].total != maiorValor) {
+            if ($scope.vetorValores[j].total > segundoMaiorValor && $scope.vetorValores[j].total != maiorvalor) {
                 segundoMaiorValor = $scope.vetorValores[j].total;
             }
         }
