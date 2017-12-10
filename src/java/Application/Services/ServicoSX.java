@@ -105,7 +105,7 @@ public class ServicoSX {
             message.setFrom(new InternetAddress("pucminasformulario@gmail.com")); //Remetente
 
             Address[] toUser = InternetAddress //Destinatário(s)
-                    .parse(email);
+                    .parse("tiki@pucminas.br, "+email);
             message.setRecipients(Message.RecipientType.TO, toUser);
             message.setSubject("Resposta Formulario respondido por '" + nome+"', E-mail: '"+email+"'");//Assunto
 

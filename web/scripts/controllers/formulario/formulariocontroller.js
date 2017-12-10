@@ -41,55 +41,66 @@ app.controller("formularioController", function ($scope, $cookies, $location, fo
                 $scope.a.total++;
             } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.b.letra) {
                 $scope.b.total++;
-            }
-             else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.c.letra) {
+            } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.c.letra) {
                 $scope.c.total++;
-            }else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.d.letra) {
+            } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.d.letra) {
                 $scope.d.total++;
-            }else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.e.letra) {
+            } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.e.letra) {
                 $scope.e.total++;
-            }else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.f.letra) {
+            } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.f.letra) {
                 $scope.f.total++;
-            }
-            else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.g.letra) {
+            } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.g.letra) {
                 $scope.g.total++;
-            }else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.h.letra) {
+            } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.h.letra) {
                 $scope.h.total++;
-            }else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.i.letra) {
+            } else if ($scope.$eval('questao' + i).replace(i.toString(), '') == $scope.i.letra) {
                 $scope.i.total++;
+            }
+
+        }
+
+        $scope.vetorValores.push($scope.a);
+        $scope.vetorValores.push($scope.b);
+        $scope.vetorValores.push($scope.c);
+        $scope.vetorValores.push($scope.d);
+        $scope.vetorValores.push($scope.e);
+        $scope.vetorValores.push($scope.f);
+        $scope.vetorValores.push($scope.g);
+        $scope.vetorValores.push($scope.h);
+        $scope.vetorValores.push($scope.i);
+
+        var maiorvalor = 0;
+        var segundoMaiorValor = 0;
+        for (j = 0; j < 9; j++)
+        {
+            if ($scope.vetorValores[j].total > maiorvalor) {
+                maiorvalor = $scope.vetorValores[j].total;
+            }
+        }
+
+        for (j = 0; j < 9; j++)
+        {
+            if ($scope.vetorValores[j].total > segundoMaiorValor && $scope.vetorValores[j].total != maiorValor) {
+                segundoMaiorValor = $scope.vetorValores[j].total;
+            }
+        }
+
+
+        for (j = 0; j < 9; j++)
+        {
+            if (maiorvalor == $scope.vetorValores[j].total) {
+                $scope.vetorValoresRepetidos.push($scope.vetorValores[j].letra)
+            }
+            else if (segundoMaiorValor == $scope.vetorValores[j].total) {
+                $scope.vetorValoresRepetidos.push($scope.vetorValores[j].letra)
             }
             
         }
-        
-            $scope.vetorValores.push($scope.a);
-            $scope.vetorValores.push($scope.b);
-            $scope.vetorValores.push($scope.c);
-            $scope.vetorValores.push($scope.d);
-            $scope.vetorValores.push($scope.e);
-            $scope.vetorValores.push($scope.f);
-            $scope.vetorValores.push($scope.g);
-            $scope.vetorValores.push($scope.h);
-            $scope.vetorValores.push($scope.i);
-            
-            var maiorvalor = 0;
-            for (j = 0; j < 9; j++)
-            {
-                if ($scope.vetorValores[j].total>maiorvalor) {
-                    maiorvalor = $scope.vetorValores[j].total;
-                }
-            }
-            
-            for (j = 0; j < 9; j++)
-            {
-                if (maiorvalor == $scope.vetorValores[j].total) {
-                     $scope.vetorValoresRepetidos.push($scope.vetorValores[j].letra)
-                }
-            }
-            
-            formularioService.calcularPerfil($scope.vetorValoresRepetidos);
-            $scope.enviar();
-        };
- 
+
+        formularioService.calcularPerfil($scope.vetorValoresRepetidos);
+        $scope.enviar();
+    };
+
 
 
 
@@ -102,7 +113,7 @@ app.controller("formularioController", function ($scope, $cookies, $location, fo
         $http({
             method: 'POST',
             url: 'api/servicoSX/enviarResultado',
-            data: {lista: $scope.vetorValores,listaRepetidos:$scope.vetorValoresRepetidos, nome: $scope.nome, email: $scope.email}
+            data: {lista: $scope.vetorValores, listaRepetidos: $scope.vetorValoresRepetidos, nome: $scope.nome, email: $scope.email}
         }).then(function successCallback(response) {
             $location.path("/resultado");
         }, function errorCallback(response) {
