@@ -5,7 +5,7 @@
 <p> <h3> Folder Structure </h3> </p>
 <pre>
 <b>Web </b> - Angular and html5 front-end files
-<b> Src /Java /Application </b> - Class with the rest service.
-<b> Src /Java /Domain </b> --Project with Domain Files (Entities, Dtos and Repos)
+<b>Src /Java /Application </b> - Class with the rest service.
+<b>Src /Java /Domain </b> --Project with Domain Files (Entities, Dtos and Repos)
 </pre>
 
